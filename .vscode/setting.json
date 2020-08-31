@@ -1,0 +1,15 @@
+{
+  "deepscan.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+        "language": "vue",
+        "autoFix": true
+    }
+],
+"eslint.autoFixOnSave": true,
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": true
+}
+}
