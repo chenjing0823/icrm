@@ -1,4 +1,5 @@
 const path = require('path')
+const config = require('./config')
 const UglifyPlugin = require('uglifyjs-webpack-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 module.exports = {
@@ -90,7 +91,7 @@ module.exports = {
   },
   css: {
     // 启用 CSS modules
-    modules: false,
+    requireModuleExtension: false,
     // 是否使用css分离插件
     extract: true,
     // 开启 CSS source maps，一般不建议开启
@@ -107,26 +108,12 @@ module.exports = {
   devServer: {
     // host: 'localhost',
     host: '0.0.0.0',
-    port: 8000, // 端口号
+    port: config.dev.port, // 端口号
     https: false, // https:{type:Boolean}
     open: true, // 配置自动启动浏览器  http://172.11.11.22:8888/rest/XX/
     hotOnly: true, // 热更新
     // proxy: 'http://localhost:8000'   // 配置跨域处理,只有一个代理
-    proxy: {
-      // 配置自动启动浏览器
-      '/XX/*': {
-        target: 'http://172.16.68.134:8089',
-        changeOrigin: true,
-        // ws: true,//websocket支持
-        secure: false
-      },
-      '/XX2/*': {
-        target: 'http://172.16.68.134:8089',
-        changeOrigin: true,
-        // ws: true,//websocket支持
-        secure: false
-      }
-    }
+    proxy: config.dev.proxyTable
   },
   // 第三方插件配置 https://www.npmjs.com/package/vue-cli-plugin-style-resources-loader
   pluginOptions: {}
