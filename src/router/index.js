@@ -1,22 +1,25 @@
+/*
+ * @Author: jing.chen
+ * @Date: 2020-08-28 15:29:37
+ * @LastEditors: jing.chen
+ * @LastEditTime: 2020-09-08 15:30:33
+ * @Description:
+ */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: '首页',
+    component: () => import(/* webpackChunkName: "list" */ '@/views/home/home.vue')
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/list',
+    name: '列表',
+    component: () => import(/* webpackChunkName: "list" */ '@/views/list/list.vue')
   }
 ]
 
