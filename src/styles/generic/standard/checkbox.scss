@@ -1,0 +1,11 @@
+/*
+ * @Author: qianqian.zhao
+ * @Date: 2019-01-29 18:52:01
+ * @LastEditors: qianqian.zhao
+ * @LastEditTime: 2019-02-19 19:51:22
+ * @Description: checkbox 样式重写
+ */
+
+.el-checkbox__input.is-checked + .el-checkbox__label {
+  color: $text-main;
+}

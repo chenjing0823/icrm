@@ -1,0 +1,67 @@
+// 自定义选择框样式
+.item-select {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 40px 0 8px;
+  border-radius: 2px;
+  border: 1px solid rgb(191, 203, 217);
+  background-color: #fff;
+  min-height: 36px;
+  &.disabled {
+    background-color: #f5f7fa;
+    border-color: #e4e7ed;
+    color: #c0c4cc;
+    cursor: not-allowed;
+  }
+  .item {
+    color: #FF8E3D;
+    height: 24px;
+    line-height: 22px;
+    box-sizing: border-box;
+    margin: 3px 0 3px 6px;
+    background-color: rgba(255, 142, 61, 0.1);
+    border: 1px solid rgba(255, 142, 61, 0.2);
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    .text {
+      display: inline-block;
+      max-width: 120px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      vertical-align: top;
+    }
+    .del {
+      border-radius: 50%;
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+      font-size: 12px;
+      transform: scale(0.75);
+      height: 18px;
+      width: 18px;
+      line-height: 18px;
+      vertical-align: middle;
+      top: -1px;
+      right: -2px;
+      transition: all 0.2s;
+      &:hover {
+        background-color: #20a0ff;
+        color: #fff;
+      }
+    }
+  }
+  .select-btn {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    // margin-top: -14px; zpp
+  }
+  .el-input__inner {
+    border: 0;
+  }
+}

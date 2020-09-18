@@ -1,0 +1,50 @@
+// 首页时间筛选
+.time-tab-right{
+    .tab-right-btn-en{
+        margin-right: 25px !important;
+        width: 65px !important;
+    }
+    .tab-month-btn-en{
+        margin-right: 0 !important;
+        margin-top: 15px !important;
+        margin-bottom: 15px !important;
+        width: 60px !important;
+    }
+    .tab-season-btn-en{
+        margin-left: 25px !important;
+        width: 120px !important;
+    }
+}
+
+// 消息右侧弹框下载tab中的预览与下载
+.item-download-en{
+    width: 65px;
+    text-align: right;
+    a{
+      display: block;
+      margin-top: 5px;
+    }
+    &__link{
+      color: #20A0FF;
+      align-self: center;
+      cursor: pointer;
+    }
+}
+
+// 部门&员工下拉选择框
+.dropbox{
+    .department{
+        .title-en{
+            -webkit-writing-mode: vertical-rl;
+             writing-mode: vertical-rl;
+             line-height: 1 !important;
+        }
+    }
+    .tab-menu{
+        .item2-en{
+            -webkit-writing-mode: vertical-rl;
+             writing-mode: vertical-rl;
+             line-height: 1 !important;
+        }
+    }
+}

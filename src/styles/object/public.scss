@@ -1,0 +1,214 @@
+html {
+  overflow-y: scroll;
+}
+
+:root {
+  overflow-y: auto;
+  // overflow-x: hidden;
+}
+
+:root body {
+  position: absolute;
+}
+
+body {
+  width: 100vw;
+  overflow: hidden;
+  overflow-x: auto;
+  min-width: 1200px;
+}
+
+.global-big-textarea {
+  &>textarea{
+    height: 140px;
+    resize: none;
+  }
+}
+.fee-hide{
+  display: none !important;
+}
+.memo-block{
+  background: #F0F2FE;
+  color: #797A7B;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+body .field-memo__popper{
+  // background: #303133;
+  // color: #fff;
+  padding: 10px;
+}
+.view__block{
+  @include singleline-ellipsis;
+}
+.value-input__see{
+  width: 100%;
+  @include singleline-ellipsis;
+}
+.sub-input__block{
+  text-align: left;
+  box-sizing: border-box;
+  padding: 0 15px;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  background: #fff;
+  @include singleline-ellipsis;
+}
+.form-data__field-item{
+  width: $field-width!important;
+}
+.form-data__field-item--base{
+  width: $field-width!important;
+}
+.rule-width{
+  width: 280px !important;
+}
+.other-block-input{
+  outline: none;
+  border:1px solid #dcdfe6;
+  height: 30px;
+  margin-left: 5px;
+  padding-left: 15px;
+  max-width: 140px!important;
+  border-radius: 4px;
+  &:hover{
+    border:1px solid #FF8E3D;
+  }
+}
+.is-error {
+  &>.el-form-item__content{
+    &>.input-address{
+      .form-data__field-item--sub{
+        border-color: #f56c6c;
+      }
+    }
+  }
+}
+.form-data__field-item--sub{
+  width: 210px !important;
+}
+.is_sub_width_set{
+  width: 100% !important;
+}
+// 跟进记录的双列表单模式下宽度异常问题
+.double-column .is_sub_width_set{
+  width: inherit!important;
+}
+// .input-text-see{
+//   &>.el-input{
+//     &>input{
+//       border: 1px solid transparent !important;
+//     }
+//   }
+// }
+.disabled__block{
+  color: #c0c4cc!important;
+  cursor: not-allowed!important;
+}
+.field-input-block{
+  box-sizing: border-box;
+  line-height: 30px;
+  width: $field-width;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  &:focus{
+    border-color: #FF8E3D;
+  }
+}
+.form-item{
+  position: relative;
+}
+.field-item{
+  // display: inline-block;
+}
+.field-item__text {
+  color:#999;
+  font-size:10px;
+  padding-left: 10px;
+}
+.field-memo-tooltip{
+  color: #CCCCCC;
+  position: absolute;
+  top: 9px;
+  left: -17px;
+  &:hover{
+    color: $base-orange;
+  }
+}
+.xbb-pro-dropdown_wrap{
+  max-height: 274px!important;
+}
+
+.wd-100{
+  width: 100%;
+}
+.mg-b-10{
+  margin-bottom: 10px;
+}
+.mg-r-10{
+  margin-right: 10px;
+}
+.mg-top-10 {
+  margin-top: 10px;
+}
+.mg-bottom-10 {
+  margin-bottom: 10px;
+}
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+.pl-10 {
+  padding-left: 10px;
+}
+.pl-15 {
+  padding-left: 15px;
+}
+.p-lv-10 {
+  padding: 0 10px;
+}
+.p-lv-5 {
+  padding: 0 5px;
+}
+.pd-0 {
+  padding: 0;
+}
+.pd-5 {
+  padding: 5px;
+}
+.pd-10 {
+  padding: 10px;
+}
+.no-pd{
+  padding: 0;
+}
+.wd-100{
+  width: 100%;
+}
+.hgt-100 {
+  height: 100%;
+}
+.wd-50{
+  width: 50%;
+}
+.subform-cell .el-form-item.is-error .el-input__inner{
+  border-color: #f56c6c;
+}
+body .el-transfer__button{
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 50%;
+}
+// .field-item .field-see__left{
+  // text-align: left;
+  // box-sizing: border-box;
+  // padding-left: 12px;
+// }

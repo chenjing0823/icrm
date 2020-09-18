@@ -1,0 +1,62 @@
+// 全局变量
+
+// 基本颜色（彩色）
+$base-orange: #FF8E3D; // 橙色,作为全局主要色调
+$base-blue: #20A0FF; // 蓝色
+$base-red: #E05353; // 红色
+$base-green: #75BB6B; // 绿色
+$base-deepBlue: #3A4C67; // 深蓝色
+$base-menuDaub: #F3F6FD; // 菜单栏底色（该颜色用于文字按钮以及菜单。）
+$base-lineGray: #F5F7FA; // 浅灰色（用于鼠标经过可触发区域时，背景色的变更）
+$base-black: #000; //全黑
+
+// 正文颜色（黑色不同明度）
+$text-title: #222; // 大标题
+$text-main: #444; // 重要正文
+$text-plain: #666; // 普通正文
+$text-auxiliary: #999; // 辅助文字
+$text-label: #6a82a4; // 标签颜色（点赞回复，tag）
+$text-white: #FFFFFF; // 白色字体（区分底色）,底色有色彩时的文字色
+$text-tip: #ccc; // 提示文字
+
+// 线条颜色
+$line-table: #E0E6ED; // 表格线条
+$line-filter: #E0E6ED; // 筛选框线条
+$line-input: #D8DCE6; // 输入框线条
+$line-cut-light: #F2F2F2; // 较浅分割线条 +（dialog 顶部弹窗背景色）
+$line-cut-deep: #E9E9E9; // 较深分割线条
+$line-cut-table:#DEDEDE; // 表格分割线
+$line-dialog:#D9D9D9; // 弹窗中使用到到border 色
+
+// 背景颜色
+$bg-menu: #3A4C67; // 一级、二级菜单背景色
+$bg-primary: #F0F2F5; // 底色（默认背景色,大背景色）
+$bg-tag: #EFEFEF; // 标签背景色
+$bg-table: #E5E9F2; // 表头背景色
+$bg-li: #F3F6FD; // 列表背景色
+$bg-blue: #E9F1FD;
+$bg-shallow-blue: #f0f4fc;
+// $line-cut-light:#F3F3F3; // dialog 顶部弹窗背景色
+
+// 表格颜色
+$table-head-bg: #EEF1F6; // 表格头部背景
+
+// 标签颜色
+$tag-orange: #F3B563; // 橙色标签
+$tag-blue: #639CF8; // 蓝色标签
+$tag-green: #8BDB7F; // 绿色标签
+$tag-purple: #C081EE; // 紫色标签
+$tag-yellow: #F3B563; // 黄色标签
+$tag-red: #EE7D71; // 红色标签
+$tag-blue-deep: #A1A9B6; // 深蓝标签
+$tag-gray: #929292; // 灰色标签
+
+// 图标及自定义icon
+$icon-orange: #F59C44;
+$icon-red: #EA7F63;
+$icon-green: #5CC1A5;
+$icon-yellow: #FFC03D;
+$icon-blue: #608EE6;
+
+$field-width :430px; // 表单字段基本的宽度
+$field-width-small :210px; // 表单字段 （小一点的 -- 时间|下拉）

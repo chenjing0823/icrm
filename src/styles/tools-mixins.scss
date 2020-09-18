@@ -1,0 +1,61 @@
+// 放全局使用的工具
+
+@import "./setting-variable.scss";
+
+@mixin button ($bg-color: $base-orange) {
+  width: 58px;
+  height: 32px;
+  border-radius: 3px;
+  background-color: $bg-color;
+}
+
+// 清除浮动
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// 单行文本超出隐藏
+@mixin singleline-ellipsis () {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 多行文本超出隐藏，传入行数
+@mixin multiline-ellipsis ($lines) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+// 滚动条样式
+@mixin scrollBar {
+  &::-webkit-scrollbar-track-piece {
+    background: #d3dce6;
+  }
+
+  &::-webkit-scrollbar {
+    width: 3px;
+    height: 16px;
+    background-color: #F5F5F5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #99a9bf;
+    border-radius: 20px;
+  }
+}
+
+// 图片背景图
+@mixin bg-image ($url) {
+  background-image: url($url + "@2x.png");
+  // @media (-webkit-min-device-pixel-ratio: 3) and (min-device-pixel-ratio: 3) {
+  //   background-image: url($url + "@3x.png")
+  // }
+}

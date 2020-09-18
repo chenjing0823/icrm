@@ -1,0 +1,36 @@
+/*
+ * @Author: xuwang.bao
+ * @Date: 2019-01-08 10:43:37
+ * @LastEditors: xuwang.bao
+ * @LastEditTime: 2019-01-08 10:59:42
+ * @Description: Message Box 样式重写
+ */
+
+ body{
+   .el-message-box{
+     &>.el-message-box__header{
+       box-sizing: border-box;
+        height: 57px;
+        line-height: 57px;
+        background: $line-cut-light;
+        padding: {
+          top:0;
+          bottom: 0px;
+        }
+        border-bottom: 1px solid $line-dialog;
+        &>.el-message-box__title{
+          line-height: 57px;
+        }
+        &>.el-message-box__headerbtn{
+          line-height: 57px;
+          top:0px;
+        }
+     }
+     &>.el-message-box__content{
+       padding: {
+         top:20px;
+         bottom: 20px;
+       }
+     }
+   }
+ }

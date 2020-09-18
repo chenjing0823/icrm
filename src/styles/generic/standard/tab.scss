@@ -1,0 +1,31 @@
+/*
+ * @Author: qianqian.zhao
+ * @Date: 2019-01-09 10:40:49
+ * @LastEditors: qianqian.zhao
+ * @LastEditTime: 2019-02-19 19:52:44
+ * @Description: tab栏样式重置
+ */
+
+
+.el-tabs--card {
+  & > .el-tabs__header {
+    border-bottom: none;
+    .el-tabs__nav {
+      border-bottom: 1px solid #e4e7ed;
+      border-radius: 4px 4px 4px 4px;
+      .el-tabs__item {
+        background-color: $bg-primary;
+        border-left: none;
+        height: 30px;
+        line-height: 30px;
+      }
+      .el-tabs__item.is-active {
+        background-color: $text-white;
+        border-radius: 4px 4px 4px 4px;
+      }
+    }
+  }
+  & > .el-tabs__content {
+    overflow: inherit;
+  }
+}

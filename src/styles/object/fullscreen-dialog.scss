@@ -1,0 +1,53 @@
+.form-data-edit-dialog {
+  &>.edit-dialog__dialog {
+    overflow: hidden;
+
+    &>.el-dialog {
+      height: 100%;
+      // overflow: hidden;
+
+      &>.el-dialog__body {
+        height: calc(100% - 60px)!important;
+        padding: 0;
+        background: #F0F2F5;
+      }
+    }
+  }
+
+  .edit-dialog__header {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 40px;
+    align-items: center;
+
+    &>.edit-dialog__header--title {
+      font-size: 22px;
+      color: $text-main;
+      font-weight: 500;
+    }
+  }
+
+  // 中间内容
+  .edit-dialog__content {
+    box-sizing: border-box;
+    // height: 2000px;
+    width: 1200px;
+    min-height: 100%;
+    margin: 0px auto;
+    background: #fff;
+    padding: 50px 40px 100px;
+  }
+
+  .edit-dialog__scrollbar {
+    height: 100%;
+
+    &>.el-scrollbar__wrap {
+      height: 100%;
+
+      &>.el-scrollbar__view {
+        // height: 100%;
+      }
+    }
+  }
+}

@@ -2,12 +2,19 @@
  * @Author: jing.chen
  * @Date: 2020-09-08 15:32:10
  * @LastEditors: jing.chen
- * @LastEditTime: 2020-09-08 15:49:07
+ * @LastEditTime: 2020-09-18 15:47:41
  * @Description: 请求封装
  */
 
 import axios from 'axios'
+import { Message } from 'element-ui'
 
+// element-ui，message默认提示时间2s
+const _Message = function (params = {}) {
+  const _duration = params.duration || 2000
+  params.duration = _duration
+  Message(params)
+}
 // 过滤特殊字符
 function CharacterFilter (str) {
   let newStr = ''
@@ -49,7 +56,7 @@ http.interceptors.request.use(
   config => {
     // 携带必要的数据
     const defaultParams = {
-      userid: '1'
+      userId: '1'
     }
     config.data = Object.assign({}, defaultParams, config.data)
 
@@ -74,6 +81,39 @@ http.interceptors.request.use(
   }
 )
 
+// 添加响应拦截
+http.interceptors.response.use(
+  response => {
+    if (response) {
+      const { data } = response
+
+      // 只将response 中的 data 输出
+      if (data.result) {
+        return data.result
+      } else if (!data.success) {
+        // success === false
+        window.utils.messageBox({
+          type: 'error',
+          message: data.msg
+        })
+        return Promise.reject(data)
+      } else {
+        return data
+      }
+    } else {
+      return {}
+    }
+  },
+  err => {
+    // 响应错误处理
+    console.log(err)
+    _Message({
+      type: 'error',
+      message: err
+    })
+    return Promise.reject(err)
+  }
+)
 // 控制api版本前缀
 const API_PREFIX = '/'
 // const API_PREFIX = '/pro/v1'

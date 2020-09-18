@@ -1,0 +1,148 @@
+/*
+ * @Author: pengpeng.zhu
+ * @LastEditors: pengpeng.zhu
+ * @Date: 2019-02-28 14:17:33
+ * @LastEditTime: 2019-04-01 15:35:13
+ * @Description: 列表页的公共样式
+ */
+
+//  主体内容的样式
+ .content {
+   width: 100%;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+ }
+
+//  （跟进提醒，访客计划）小弹窗显示的样式
+ .mini-modal {
+   position: fixed;
+   bottom: 10px;
+   overflow: hidden;
+   box-sizing: border-box;
+   width: 267px;
+   min-height: 158px;
+   border-radius: 2px;
+   background-color: #fff;
+   box-shadow: 0 0 6px 0 rgba(105, 105, 105, 0.5);
+   z-index: 100;
+   display: none;
+
+   .remind-content {
+     position: absolute;
+     top: 33px;
+     bottom: 10px;
+     overflow: auto;
+   }
+
+   &:before {
+     position: absolute;
+     left: -8px;
+     top: 70px;
+     content: '';
+     width: 16px;
+     height: 16px;
+     transform: rotate(45deg);
+     background-color: #fff;
+     box-shadow: 0 0 4px 0 rgba(105, 105, 105, 0.5);
+     z-index: -1;
+   }
+
+   &:after {
+     position: absolute;
+     left: 0;
+     top: 65px;
+     content: '';
+     width: 12px;
+     height: 26px;
+     background-color: #fff;
+   }
+
+   .no-data {
+     margin-top: 30px;
+     text-align: -webkit-center;
+   }
+
+   h5 {
+     line-height: 1;
+     padding: 10px 15px;
+     color: #fff;
+     font-size: 13px;
+     font-weight: normal;
+     background-color: $bg-menu;
+     border-radius: 2px 2px 0 0;
+
+     .close {
+       float: right;
+       cursor: pointer;
+
+       &:hover {
+         color: $base-orange;
+       }
+     }
+   }
+
+   .item {
+     margin: 15px;
+     padding-bottom: 10px;
+     border-bottom: 1px dotted #DDD;
+
+     .title {
+       line-height: 20px;
+       padding-bottom: 4px;
+       font-size: 0;
+
+       .user {
+         font-size: 20px;
+         display: inline-block;
+         min-width: 70px;
+         box-sizing: border-box;
+         padding-right: 10px;
+       }
+
+       .type {
+         font-size: 12px;
+         color: $base-orange;
+       }
+     }
+
+     .con {
+       line-height: 1.5;
+       font-size: 0;
+       padding-bottom: 6px;
+
+       .name {
+         color: #999;
+         display: inline-block;
+         width: 70px;
+         vertical-align: top;
+         font-size: 13px;
+       }
+
+       .text {
+         display: inline-block;
+         width: 150px;
+         font-size: 13px;
+         word-break: break-all;
+         word-wrap: break-word;
+       }
+     }
+
+     &:last-child {
+       padding-bottom: 0;
+       border-bottom-width: 0;
+     }
+   }
+
+   .foot {
+     position: absolute;
+     width: 100%;
+     bottom: 0px;
+     box-sizing: border-box;
+     text-align: center;
+     padding: 10px;
+     font-size: 13px;
+     line-height: 1;
+     background-color: #edf0f5;
+   }
+ }

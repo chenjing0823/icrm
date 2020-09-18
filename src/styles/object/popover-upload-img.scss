@@ -1,0 +1,33 @@
+/*
+    图片上传过程展示样式
+*/
+// @import 'variable.less';
+.img-box {
+    .el-icon-plus {
+        line-height: 80px;
+        width:80px;
+        height: 80px;
+    }
+    .el-upload--picture-card {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 2px;
+    }
+    .el-upload-list__item {
+    width: 80px;
+    height: 80px;
+    border-radius: 2px;
+    transition: none;
+    }
+    &.disabled {
+    .el-upload {
+        background-color: #eef1f6;
+        cursor: not-allowed;
+        &:hover {
+        border-color: #c0ccda;
+        color: #c0ccda;
+        }
+    }
+    }
+}

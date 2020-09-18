@@ -95,16 +95,17 @@ module.exports = {
     }
   },
   css: {
-    // 启用 CSS modules
-    requireModuleExtension: false,
-    // 是否使用css分离插件
-    extract: true,
-    // 开启 CSS source maps，一般不建议开启
-    sourceMap: false,
+    // // 启用 CSS modules
+    // requireModuleExtension: false,
+    // // 是否使用css分离插件
+    // extract: true,
+    // // 开启 CSS source maps，一般不建议开启
+    // sourceMap: false,
     // css预设器配置项
     loaderOptions: {
       sass: {
-        prependData: '@import "@/styles/global.scss";'
+        additionalData: '@import "@/styles/setting-variable.scss";'
+        // prependData: '@import "@/styles/setting-variable.scss";' 8.x一下用data，8.x用prependData
       }
     }
   },
