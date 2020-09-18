@@ -2,6 +2,11 @@ const path = require('path')
 const config = require('./config')
 const UglifyPlugin = require('uglifyjs-webpack-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
+
+// 是否为生产环境
+const isBuildEnv = function () {
+  return process.env.NODE_ENV === 'production'
+}
 module.exports = {
   publicPath: './', // 基本路径
   outputDir: 'dist', // 输出文件目录
@@ -18,7 +23,7 @@ module.exports = {
   },
   // 调整 webpack 配置 https://cli.vuejs.org/zh/guide/webpack.html#%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F
   configureWebpack: (config) => {
-    if (process.env.NODE_ENV === 'production') {
+    if (isBuildEnv()) {
       // 为生产环境修改配置...
       config.mode = 'production'
     } else {
@@ -37,7 +42,7 @@ module.exports = {
     })
     // 利用splitChunks将每个依赖包单独打包，在生产环境下配置
     // 开启gzip压缩
-    if (process.env.NODE_ENV === 'production') {
+    if (isBuildEnv()) {
       config.plugins.push(new CompressionWebpackPlugin({
         algorithm: 'gzip',
         test: /\.js$|\.html$|\.json$|\.css/,
