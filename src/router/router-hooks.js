@@ -2,7 +2,7 @@
  * @Author: jing.chen
  * @Date: 2020-08-28 16:05:35
  * @LastEditors: jing.chen
- * @LastEditTime: 2020-09-18 15:55:33
+ * @LastEditTime: 2020-09-22 14:47:53
  * @Description:
  */
 
@@ -13,6 +13,7 @@ import { getMenuList } from '@/api/common'
 
 // 路由跳转前的钩子
 router.beforeEach((to, from, next) => {
+  console.log(to.matched)
   // 获取当前路由name => alias并更新当前选中菜单
   store.commit('saveCurrActiveMenu', to.name)
   // 当前选中菜单在subMenu下（拥有两个层级）

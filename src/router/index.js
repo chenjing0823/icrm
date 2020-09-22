@@ -2,7 +2,7 @@
  * @Author: jing.chen
  * @Date: 2020-08-28 15:29:37
  * @LastEditors: jing.chen
- * @LastEditTime: 2020-09-18 15:12:29
+ * @LastEditTime: 2020-09-22 16:48:02
  * @Description:
  */
 import Vue from 'vue'
@@ -13,16 +13,16 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: '首页',
+    name: '图表中心',
     redirect: '/index',
     component: () => import(/* webpackChunkName: "frame" */ '@/components/layout/frame.vue'),
     children: [{
       path: '/index',
-      name: 'index',
+      name: '图表中心',
       meta: {
-        title: '首页'
+        title: '图表中心'
       },
-      component: () => import(/* webpackChunkName: "list" */ '@/views/list/list.vue')
+      component: () => import(/* webpackChunkName: "list" */ '@/views/home/home.vue')
     }]
   },
   {

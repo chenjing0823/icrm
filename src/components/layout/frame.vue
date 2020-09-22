@@ -2,7 +2,7 @@
  * @Author: jing.chen
  * @Date: 2020-09-18 14:03:22
  * @LastEditors: jing.chen
- * @LastEditTime: 2020-09-18 15:44:17
+ * @LastEditTime: 2020-09-22 15:38:37
  * @Description:
 -->
 <template>
@@ -28,7 +28,7 @@
       </el-aside>
       <!-- 右侧主体内容 -->
       <el-main>
-        <router-view></router-view>
+        <router-view class="main"></router-view>
       </el-main>
     </el-container>
   </el-container>
@@ -63,6 +63,9 @@ export default {
   box-sizing: border-box;
   height: 100vh;
   width: 100%;
+  .main {
+    height: 100%;
+  }
   .container-header {
     position: relative;
     height: 60px;
@@ -122,8 +125,8 @@ export default {
   .el-main {
     position: relative;
     padding: 0;
-    margin: 10px;
-    margin-top: 0;
+    margin-left: 10px;
+    margin-top: 1px;
     min-width: 1030px;
     background-color: $base-lineGray;
   }
