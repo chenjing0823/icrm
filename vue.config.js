@@ -12,7 +12,21 @@ module.exports = {
   outputDir: 'dist', // 输出文件目录
   lintOnSave: true, // eslint-loader 是否在保存的时候检查
   assetsDir: 'static', // 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录。
-  pages: undefined, // 以多页模式构建应用程序。
+  // indexPath: 'index.html',
+  pages: {
+    index: {
+      entry: 'src/main.js',
+      template: 'public/index.html',
+      filename: 'index.html',
+      title: 'icrm'
+    },
+    login: {
+      entry: 'src/views/login/login.js',
+      template: 'public/index.html',
+      filename: 'login.html',
+      title: '登录'
+    }
+  },
   runtimeCompiler: false, // 是否使用包含运行时编译器的 Vue 构建版本
   // 是否为 Babel 或 TypeScript 使用 thread-loader。该选项在系统的 CPU 有多于一个内核时自动启用，仅作用于生产构建，在适当的时候开启几个子进程去并发的执行压缩
   parallel: require('os').cpus().length > 1,
