@@ -2,7 +2,7 @@
  * @Author: jing.chen
  * @Date: 2020-09-18 14:03:22
  * @LastEditors: jing.chen
- * @LastEditTime: 2020-09-30 15:20:16
+ * @LastEditTime: 2020-09-30 15:31:21
  * @Description:
 -->
 <template>
@@ -10,6 +10,7 @@
     <el-header class="container-header">
       <div class="container-header__left">{{ companyName }}</div>
       <div class="container-header__right">
+        <manageCenter></manageCenter>
         <userBlock></userBlock>
       </div>
     </el-header>
@@ -39,12 +40,15 @@
 <script>
 import FrameSidebar from '@/components/layout/frame-sidebar.vue' // 侧边栏
 import userBlock from './components/user-block.vue'
+import manageCenter from './components/manage-center.vue'
+
 import { mapState } from 'vuex'
 export default {
   name: 'frame',
 
   components: {
     FrameSidebar,
+    manageCenter,
     userBlock
   },
 
@@ -81,6 +85,12 @@ export default {
     background-color: $text-white;
     display: flex;
     justify-content: space-between;
+    &__right {
+      display: flex;
+      .manage-center {
+        padding: 0 20px;
+      }
+    }
   }
   .container-inner {
     margin-top: 10px;

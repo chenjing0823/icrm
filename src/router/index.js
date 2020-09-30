@@ -2,7 +2,7 @@
  * @Author: jing.chen
  * @Date: 2020-08-28 15:29:37
  * @LastEditors: jing.chen
- * @LastEditTime: 2020-09-30 14:13:56
+ * @LastEditTime: 2020-09-30 15:35:34
  * @Description:
  */
 import Vue from 'vue'
@@ -24,6 +24,11 @@ const routes = [
       },
       component: () => import(/* webpackChunkName: "list" */ '@/views/home/home.vue')
     }]
+  },
+  {
+    path: '/manageCenter',
+    name: '管理中心',
+    component: () => import(/* webpackChunkName: "manage" */ '@/views/manage/index.vue')
   },
   {
     path: '/list',
