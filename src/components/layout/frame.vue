@@ -2,14 +2,16 @@
  * @Author: jing.chen
  * @Date: 2020-09-18 14:03:22
  * @LastEditors: jing.chen
- * @LastEditTime: 2020-09-22 15:38:37
+ * @LastEditTime: 2020-09-30 15:20:16
  * @Description:
 -->
 <template>
   <el-container class="frame-container">
     <el-header class="container-header">
-      <div class="container-header__left">左侧信息</div>
-      <div class="container-header__right">右边信息</div>
+      <div class="container-header__left">{{ companyName }}</div>
+      <div class="container-header__right">
+        <userBlock></userBlock>
+      </div>
     </el-header>
     <el-container>
       <!-- 侧边栏 -->
@@ -36,12 +38,14 @@
 
 <script>
 import FrameSidebar from '@/components/layout/frame-sidebar.vue' // 侧边栏
+import userBlock from './components/user-block.vue'
 import { mapState } from 'vuex'
 export default {
   name: 'frame',
 
   components: {
-    FrameSidebar
+    FrameSidebar,
+    userBlock
   },
 
   data () {
@@ -53,7 +57,10 @@ export default {
   computed: {
     ...mapState({
       menuList: state => state.menuRoutes
-    })
+    }),
+    companyName () {
+      return window.utils.LS.get('accessToken').company || '还未填写公司'
+    }
   }
 }
 </script>
@@ -63,6 +70,7 @@ export default {
   box-sizing: border-box;
   height: 100vh;
   width: 100%;
+  color: rgba(68, 68, 68, 100);
   .main {
     height: 100%;
   }
@@ -71,11 +79,8 @@ export default {
     height: 60px;
     line-height: 60px;
     background-color: $text-white;
-    &__right {
-      position: absolute;
-      right: 25px;
-      top: 0;
-    }
+    display: flex;
+    justify-content: space-between;
   }
   .container-inner {
     margin-top: 10px;

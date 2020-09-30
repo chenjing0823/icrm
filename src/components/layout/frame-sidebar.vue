@@ -2,11 +2,10 @@
  * @Author: jing.chen
  * @Date: 2020-09-18 15:15:41
  * @LastEditors: jing.chen
- * @LastEditTime: 2020-09-18 15:55:43
+ * @LastEditTime: 2020-09-30 14:07:26
  * @Description:
 -->
 <template>
-  <div class="frame-sidebar">
   <div class="frame-sidebar">
     <el-menu
       :default-active="defaultMenu"
@@ -14,7 +13,7 @@
       :unique-opened="true"
       :collapse="!extendsMenu"
       class="frame-sidebar__menu--el-menu-container"
-      active-text-color="#FF8E3D">
+      :active-text-color="themeColor">
       <template v-for="item in menu">
         <!-- 一级、二级菜单 -->
         <!-- subMenu下有子菜单被选中，则打开，样式改变 -->
@@ -50,7 +49,6 @@
         </el-menu-item>
       </template>
     </el-menu>
-  </div>
   </div>
 </template>
 
@@ -95,6 +93,9 @@ export default {
     }),
     extendsMenu () {
       return this.extends
+    },
+    themeColor () {
+      return '#409EFF'
     }
   },
 

@@ -2,7 +2,7 @@
  * @Author: jing.chen
  * @Date: 2020-08-28 16:05:35
  * @LastEditors: jing.chen
- * @LastEditTime: 2020-09-29 19:34:52
+ * @LastEditTime: 2020-09-30 14:14:50
  * @Description:
  */
 
@@ -16,15 +16,11 @@ router.beforeEach((to, from, next) => {
   /*
   * 2.如果用户信息localStorage 并且在登录页面 ，在直接跳转到应用页面
   */
+  const accessToken = window.utils.LS.get('accessToken') // 验证token
 
-  const accessToken = JSON.parse(JSON.stringify(window.utils.LS.get('accessToken'))) // 验证token
   if (accessToken && accessToken !== 'undefined') {
-  // 获取当前路由name => alias并更新当前选中菜单
-    store.commit('saveCurrActiveMenu', to.name)
-    // 当前选中菜单在subMenu下（拥有两个层级）
-    if (to.matched.length > 1) {
-      console.log('保存当前选中菜单的父级subMenu', to.matched[0].name)
-      // 保存当前选中菜单的父级subMenu
+    store.commit('saveCurrActiveMenu', to.name) // 获取当前路由name => alias并更新当前选中菜单
+    if (to.matched.length > 1) { // 当前选中菜单在subMenu下（拥有两个层级）
       store.commit('saveCurrActiveSubMenu', to.matched[0].name)
     }
     // 条件判断：路由是否请求过，false:则进入请求

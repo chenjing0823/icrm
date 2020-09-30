@@ -2,7 +2,7 @@
  * @Author: jing.chen
  * @Date: 2020-09-08 15:32:10
  * @LastEditors: jing.chen
- * @LastEditTime: 2020-09-18 15:47:41
+ * @LastEditTime: 2020-09-30 15:12:20
  * @Description: 请求封装
  */
 
@@ -54,9 +54,13 @@ const http = axios.create()
 // 添加请求拦截
 http.interceptors.request.use(
   config => {
+    let accessToken = window.utils.LS.get('accessToken')
+    if (config.url.indexOf('user/login') !== -1 || config.url.indexOf('user/reg') !== -1) { // 登录接口跳过必传参数
+      accessToken = {}
+    }
     // 携带必要的数据
     const defaultParams = {
-      userId: '1'
+      userId: accessToken.userId || '1'
     }
     config.data = Object.assign({}, defaultParams, config.data)
 
