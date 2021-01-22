@@ -2,7 +2,7 @@
  * @Author: jing.chen
  * @Date: 2020-08-28 16:05:35
  * @LastEditors: jing.chen
- * @LastEditTime: 2020-09-30 14:14:50
+ * @LastEditTime: 2020-10-12 09:14:30
  * @Description:
  */
 
@@ -26,7 +26,7 @@ router.beforeEach((to, from, next) => {
     // 条件判断：路由是否请求过，false:则进入请求
     if (!store.state.isRouterRequestStatus) {
     // 请求路由
-      getMenuList().then((res) => {
+      getMenuList({ type: 1 }).then((res) => {
       // TODO:MOCK
         console.log('获取的菜单列表', res)
         const menuList = res.menuList

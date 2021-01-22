@@ -2,13 +2,14 @@
  * @Author: jing.chen
  * @Date: 2020-09-18 15:48:06
  * @LastEditors: jing.chen
- * @LastEditTime: 2020-09-22 15:11:52
+ * @LastEditTime: 2021-01-22 23:10:27
  * @Description:
  */
 
 import '@/styles/base-element.scss'
 import Vue from 'vue'
-// import '@/directives/directives'
+import '@/directives/directives'
+import '@/styles/public.scss'
 import utils from './utils/index'
 // import lodash from 'lodash'
 import echarts from 'echarts'
