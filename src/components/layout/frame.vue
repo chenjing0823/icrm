@@ -2,7 +2,7 @@
  * @Author: jing.chen
  * @Date: 2020-09-18 14:03:22
  * @LastEditors: jing.chen
- * @LastEditTime: 2020-09-30 15:31:21
+ * @LastEditTime: 2021-08-11 19:06:54
  * @Description:
 -->
 <template>
@@ -14,7 +14,7 @@
         <userBlock></userBlock>
       </div>
     </el-header>
-    <el-container>
+    <el-container class="container-inner">
       <!-- 侧边栏 -->
       <el-aside
         class="container-inner__sidebar"
@@ -77,6 +77,8 @@ export default {
   color: rgba(68, 68, 68, 100);
   .main {
     height: 100%;
+    width: 100%;
+    background-color: #ffffff;
   }
   .container-header {
     position: relative;
